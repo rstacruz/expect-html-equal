@@ -22,7 +22,7 @@ In the browser, you can use the rawgit CDN (change `{VERSION}`):
 
 ```js
 <script src='https://cdn.rawgit.com/mjackson/expect/{VERSION}/dist/expect.min.js'></script>
-<script src='http://cdn.rawgit.com/rstacruz/expect-html-equal/{VERSION}/index.js'></script>
+<script src='https://cdn.rawgit.com/rstacruz/expect-html-equal/{VERSION}/index.js'></script>
 ```
 
 [expect]: https://www.npmjs.com/package/expect
