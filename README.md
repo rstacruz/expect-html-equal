@@ -3,6 +3,8 @@
 Extension to [expect] to compares two HTML snippets. It normalizes HTML
 snippets to be cross-compatible with legacy IE.
 
+[![Status](https://travis-ci.org/rstacruz/expect-html-equal.svg?branch=master)](https://travis-ci.org/rstacruz/expect-html-equal "See test builds")
+
 ```js
 var expect = require('expect')
 require('expect-html-equal')
