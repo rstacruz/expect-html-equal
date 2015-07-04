@@ -6,6 +6,10 @@ snippets to be cross-compatible with legacy IE.
 [![Status](https://travis-ci.org/rstacruz/expect-html-equal.svg?branch=master)](https://travis-ci.org/rstacruz/expect-html-equal "See test builds")
 
 ```js
+npm i --save-dev expect expect-html-equal
+```
+
+```js
 var expect = require('expect')
 require('expect-html-equal')
 
