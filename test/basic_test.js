@@ -6,7 +6,7 @@ if (typeof process === 'object') {
   require('mocha-jsdom')()
 }
 
-describe('my project', function () {
+describe('equal', function () {
   it('works', function () {
     var input = '<div class="name">Hello</div>'
     expect(input).toHtmlEqual('<DIV CLASS=name>Hello</DIV>')
@@ -42,5 +42,32 @@ describe('my project', function () {
   it('toNotHtmlEqual works', function () {
     var input = '<div class="name">Hello</div>'
     expect(input).toNotHtmlEqual('<div class="name">Hi</div>')
+  })
+})
+
+describe('include', function () {
+  it('works', function () {
+    var input = '<div class="name">Hello</div>'
+    expect(input).toHtmlInclude('<DIV CLASS=name>Hello</DIV>')
+  })
+
+  describe('failure', function () {    
+    beforeEach(function () {
+      try {
+        var input = '<DIV class="name">Hello</div>'
+        expect(input).toHtmlInclude('<DIV class="name">Hi</div>')
+      } catch (err) {
+        this.err = err
+      }
+    })
+
+    it.skip('.message', function () {
+      expect(this.err.message).toInclude('does not include')
+    })
+  })
+
+  it('toNotHtmlInclude works', function () {
+    var input = '<div class="name">Hello</div>'
+    expect(input).toNotHtmlInclude('<div class="name">Hi</div>')
   })
 })

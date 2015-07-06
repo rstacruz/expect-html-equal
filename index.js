@@ -10,18 +10,35 @@ void (function (root, factory) {
 }(this, function (expect) {
 
   expect.prototype.toHtmlEqual = function (other, message) {
-    toHtmlEqual.call(this, true, other, message)
+    if (!message) message = 'HTML is not equal'
+    toHtmlEqual.call(this, 'toEqual', other, message)
   }
 
   expect.prototype.toNotHtmlEqual = function (other, message) {
-    toHtmlEqual.call(this, false, other, message)
+    if (!message) message = 'HTML is equal'
+    toHtmlEqual.call(this, 'toNotEqual', other, message)
   }
 
-  function toHtmlEqual (sign, other, message) {
-    var assertion = sign ? 'toEqual' : 'toNotEqual'
+  expect.prototype.toHtmlInclude = function (other, message) {
+    toHtmlEqual.call(this, 'toInclude', other, message)
+  }
+
+  expect.prototype.toNotHtmlInclude = function (other, message) {
+    toHtmlEqual.call(this, 'toExclude', other, message)
+  }
+
+  expect.prototype.toHtmlContain =
+  expect.prototype.toHtmlInclude
+
+  expect.prototype.toHtmlExclude =
+  expect.prototype.toNotHtmlContain =
+  expect.prototype.toNotHtmlInclude
+
+  expect.htmlNormalize = normalize
+
+  function toHtmlEqual (assertion, other, message) {
     this.actual = normalize(this.actual)
     other = normalize(other)
-    if (!message) message = 'HTML ' + (sign ? 'is not' : 'is') + ' equal'
     this[assertion](other, message)
   }
 

@@ -19,6 +19,14 @@ it('works', function () {
 })
 ```
 
+API:
+
+* `expect(actual).toHtmlEqual(other)`
+* `expect(actual).toNotHtmlEqual(other)`
+* `expect(needle).toHtmlInclude(haystack)`
+* `expect(needle).toHtmlExclude(haystack)`
+* `expect.normalizeHtml`
+
 In node/iojs, it expects a `global.document` to exist, so you might want to do
 this in a jsdom environment. (eg, [mocha-jsdom])
 
