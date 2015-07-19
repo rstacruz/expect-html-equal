@@ -1,7 +1,6 @@
 # expect-html-equal
 
-Extension to [expect] to compares two HTML snippets. It normalizes HTML
-snippets to be cross-compatible with legacy IE.
+Extension to [expect] to compares two HTML snippets. It normalizes HTML so you can compare regardless of case, whitespacing, quotations, and other syntax differences. Compatible with legacy IE.
 
 [![Status](https://travis-ci.org/rstacruz/expect-html-equal.svg?branch=master)](https://travis-ci.org/rstacruz/expect-html-equal "See test builds")
 
